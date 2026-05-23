@@ -128,12 +128,12 @@ export function KeyboardHints({ onFocusPrompt }: Props) {
             aria-labelledby="keyboard-hints-title"
             aria-describedby="keyboard-hints-desc"
           >
-            <h3
+            <h2
               id="keyboard-hints-title"
               className="text-sm font-semibold text-ink-100"
             >
               Keyboard shortcuts
-            </h3>
+            </h2>
             <ul className="mt-3 space-y-2 text-xs text-ink-200">
               <Row keys={["/"]} label="Focus prompt input" />
               <Row keys={[isMac() ? "⌘" : "Ctrl", "Enter"]} label="Analyze" />

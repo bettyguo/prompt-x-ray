@@ -71,9 +71,9 @@ interface Props {
 export function ExamplePromptsGallery({ onPick, busy }: Props) {
   return (
     <div>
-      <h3 className="mb-2 text-xs uppercase tracking-wider text-ink-300">
+      <h2 className="mb-2 text-xs uppercase tracking-wider text-ink-300">
         Try one of these
-      </h3>
+      </h2>
       <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-5">
         {EXAMPLES.map((ex) => (
           <button

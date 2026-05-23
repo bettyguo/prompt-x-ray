@@ -48,7 +48,7 @@ export function LayerPanel({ analysis }: Props) {
       }
     >
       <div className="grid grid-cols-[auto_1fr] gap-2">
-        <div className="flex flex-col-reverse justify-between pr-1 text-[9px] font-mono text-ink-400">
+        <div className="flex flex-col-reverse justify-between pr-1 text-[9px] font-mono text-ink-300">
           {Array.from({ length: LAYERS }).map((_, l) => (
             <span key={l} className="leading-none">L{l}</span>
           ))}
@@ -94,7 +94,7 @@ export function LayerPanel({ analysis }: Props) {
             })}
           </div>
           <div
-            className="mt-1 grid text-[9px] font-mono text-ink-400"
+            className="mt-1 grid text-[9px] font-mono text-ink-300"
             style={{ gridTemplateColumns: `repeat(${positions}, minmax(28px, 1fr))` }}
           >
             {Array.from({ length: positions }).map((_, p) => {
