@@ -46,3 +46,7 @@ playwright/.cache/
 
 # Session-local working files (not part of the public project)
 POLISH_PROMPTS.md
+
+# Lighthouse audit artifacts (run locally with `npx lighthouse <url> --output=json`)
+.lh.json
+lighthouse-report.*
