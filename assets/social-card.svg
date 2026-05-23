@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  prompt-x-ray launch social card — PLACEHOLDER.
+
+  This is NOT a screenshot. It is a static illustration meant to be used in
+  the launch tweet until a real `assets/demo.gif` exists. The "four-panel"
+  grid below is a stylised abstraction, not real analysis output. Once
+  Phase 2.5 lands and `npm run capture` produces a real `assets/og.png`,
+  prefer that over this card.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="prompt-x-ray — forensic prompt visualizer (placeholder card)">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1419"/>
+      <stop offset="60%" stop-color="#0f2a33"/>
+      <stop offset="100%" stop-color="#134e4a"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#5eead4"/>
+      <stop offset="100%" stop-color="#14b8a6"/>
+    </linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#5eead4" stroke-opacity="0.05" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <!-- Left column: copy -->
+  <g font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif" fill="#e6f1f0">
+    <text x="64" y="118" font-size="13" letter-spacing="2.4" fill="#5eead4" font-weight="600">PROMPT-X-RAY · PLACEHOLDER</text>
+    <text x="64" y="200" font-size="58" font-weight="700">Watch a prompt</text>
+    <text x="64" y="266" font-size="58" font-weight="700">turn into tokens.</text>
+    <text x="64" y="330" font-size="20" fill="#b8c7ce">Forensic visualizer for tokenizer, attention,</text>
+    <text x="64" y="358" font-size="20" fill="#b8c7ce">logit lens, and sampling — all in your browser.</text>
+
+    <!-- footer URL -->
+    <text x="64" y="554" font-size="16" fill="#5eead4" font-weight="600">github.com/openproblems-labs/prompt-x-ray</text>
+    <text x="64" y="578" font-size="12" fill="#6b7d83">Static placeholder card. Real screenshot ships post Phase 2.5.</text>
+  </g>
+
+  <!-- Right column: stylised four-panel grid (NOT a real screenshot) -->
+  <g transform="translate(680, 90)">
+    <rect x="0" y="0" width="460" height="450" rx="14" fill="#0e1a20" stroke="#5eead4" stroke-opacity="0.25"/>
+
+    <!-- Panel borders -->
+    <line x1="230" y1="20" x2="230" y2="430" stroke="#1f3a3f" stroke-width="1"/>
+    <line x1="20" y1="225" x2="440" y2="225" stroke="#1f3a3f" stroke-width="1"/>
+
+    <!-- Panel labels -->
+    <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10" fill="#5eead4">
+      <text x="30" y="40">TOKENIZER</text>
+      <text x="240" y="40">ATTENTION</text>
+      <text x="30" y="245">LOGIT LENS</text>
+      <text x="240" y="245">SAMPLING</text>
+    </g>
+
+    <!-- Tokenizer chips (top-left) -->
+    <g transform="translate(30, 60)">
+      <rect x="0"   y="0" width="44" height="22" rx="4" fill="#14b8a6" fill-opacity="0.55"/>
+      <rect x="50"  y="0" width="30" height="22" rx="4" fill="#14b8a6" fill-opacity="0.40"/>
+      <rect x="86"  y="0" width="52" height="22" rx="4" fill="#14b8a6" fill-opacity="0.70"/>
+      <rect x="144" y="0" width="38" height="22" rx="4" fill="#14b8a6" fill-opacity="0.30"/>
+      <rect x="0"   y="30" width="58" height="22" rx="4" fill="#14b8a6" fill-opacity="0.45"/>
+      <rect x="64"  y="30" width="34" height="22" rx="4" fill="#14b8a6" fill-opacity="0.60"/>
+      <rect x="104" y="30" width="46" height="22" rx="4" fill="#14b8a6" fill-opacity="0.35"/>
+      <rect x="0"   y="60" width="40" height="22" rx="4" fill="#14b8a6" fill-opacity="0.50"/>
+      <rect x="46"  y="60" width="60" height="22" rx="4" fill="#14b8a6" fill-opacity="0.70"/>
+      <rect x="112" y="60" width="32" height="22" rx="4" fill="#14b8a6" fill-opacity="0.35"/>
+    </g>
+
+    <!-- Attention heatmap (top-right) — 6x6 grid -->
+    <g transform="translate(248, 60)">
+      <g>
+        <!-- row 0 -->
+        <rect x="0"   y="0"   width="24" height="24" fill="#0d3b3a"/>
+        <rect x="26"  y="0"   width="24" height="24" fill="#155e62"/>
+        <rect x="52"  y="0"   width="24" height="24" fill="#0a2a2e"/>
+        <rect x="78"  y="0"   width="24" height="24" fill="#1e8a8a"/>
+        <rect x="104" y="0"   width="24" height="24" fill="#0a2a2e"/>
+        <rect x="130" y="0"   width="24" height="24" fill="#5eead4"/>
+        <!-- row 1 -->
+        <rect x="0"   y="26"  width="24" height="24" fill="#155e62"/>
+        <rect x="26"  y="26"  width="24" height="24" fill="#0a2a2e"/>
+        <rect x="52"  y="26"  width="24" height="24" fill="#2dd4bf"/>
+        <rect x="78"  y="26"  width="24" height="24" fill="#0d3b3a"/>
+        <rect x="104" y="26"  width="24" height="24" fill="#1e8a8a"/>
+        <rect x="130" y="26"  width="24" height="24" fill="#0a2a2e"/>
+        <!-- row 2 -->
+        <rect x="0"   y="52"  width="24" height="24" fill="#0a2a2e"/>
+        <rect x="26"  y="52"  width="24" height="24" fill="#1e8a8a"/>
+        <rect x="52"  y="52"  width="24" height="24" fill="#0d3b3a"/>
+        <rect x="78"  y="52"  width="24" height="24" fill="#5eead4"/>
+        <rect x="104" y="52"  width="24" height="24" fill="#0a2a2e"/>
+        <rect x="130" y="52"  width="24" height="24" fill="#155e62"/>
+        <!-- row 3 -->
+        <rect x="0"   y="78"  width="24" height="24" fill="#155e62"/>
+        <rect x="26"  y="78"  width="24" height="24" fill="#0a2a2e"/>
+        <rect x="52"  y="78"  width="24" height="24" fill="#0d3b3a"/>
+        <rect x="78"  y="78"  width="24" height="24" fill="#1e8a8a"/>
+        <rect x="104" y="78"  width="24" height="24" fill="#2dd4bf"/>
+        <rect x="130" y="78"  width="24" height="24" fill="#0a2a2e"/>
+        <!-- row 4 -->
+        <rect x="0"   y="104" width="24" height="24" fill="#0d3b3a"/>
+        <rect x="26"  y="104" width="24" height="24" fill="#2dd4bf"/>
+        <rect x="52"  y="104" width="24" height="24" fill="#155e62"/>
+        <rect x="78"  y="104" width="24" height="24" fill="#0a2a2e"/>
+        <rect x="104" y="104" width="24" height="24" fill="#1e8a8a"/>
+        <rect x="130" y="104" width="24" height="24" fill="#5eead4"/>
+        <!-- row 5 -->
+        <rect x="0"   y="130" width="24" height="24" fill="#0a2a2e"/>
+        <rect x="26"  y="130" width="24" height="24" fill="#0d3b3a"/>
+        <rect x="52"  y="130" width="24" height="24" fill="#1e8a8a"/>
+        <rect x="78"  y="130" width="24" height="24" fill="#155e62"/>
+        <rect x="104" y="130" width="24" height="24" fill="#0a2a2e"/>
+        <rect x="130" y="130" width="24" height="24" fill="#2dd4bf"/>
+      </g>
+    </g>
+
+    <!-- Logit lens (bottom-left): stacked rows of varying width -->
+    <g transform="translate(30, 265)">
+      <rect x="0" y="0"   width="60"  height="10" rx="2" fill="#14b8a6" fill-opacity="0.30"/>
+      <rect x="0" y="16"  width="100" height="10" rx="2" fill="#14b8a6" fill-opacity="0.45"/>
+      <rect x="0" y="32"  width="140" height="10" rx="2" fill="#14b8a6" fill-opacity="0.55"/>
+      <rect x="0" y="48"  width="160" height="10" rx="2" fill="#14b8a6" fill-opacity="0.65"/>
+      <rect x="0" y="64"  width="180" height="10" rx="2" fill="#14b8a6" fill-opacity="0.78"/>
+      <rect x="0" y="80"  width="170" height="10" rx="2" fill="#14b8a6" fill-opacity="0.88"/>
+      <rect x="0" y="96"  width="178" height="10" rx="2" fill="url(#accent)"/>
+      <text x="0" y="130" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" fill="#5eead4">layer 0 → 11</text>
+    </g>
+
+    <!-- Sampling bars (bottom-right) -->
+    <g transform="translate(248, 265)">
+      <rect x="0" y="0"   width="170" height="14" rx="3" fill="url(#accent)"/>
+      <text x="178" y="11" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" fill="#b8c7ce">book</text>
+      <rect x="0" y="22"  width="120" height="14" rx="3" fill="#14b8a6" fill-opacity="0.75"/>
+      <text x="128" y="33" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" fill="#b8c7ce">gift</text>
+      <rect x="0" y="44"  width="86"  height="14" rx="3" fill="#14b8a6" fill-opacity="0.60"/>
+      <text x="94"  y="55" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" fill="#b8c7ce">kiss</text>
+      <rect x="0" y="66"  width="64"  height="14" rx="3" fill="#14b8a6" fill-opacity="0.45"/>
+      <text x="72"  y="77" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" fill="#b8c7ce">ride</text>
+      <rect x="0" y="88"  width="42"  height="14" rx="3" fill="#14b8a6" fill-opacity="0.35"/>
+      <text x="50"  y="99" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" fill="#b8c7ce">hand</text>
+      <text x="0"  y="130" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" fill="#5eead4">top-k · stylised</text>
+    </g>
+
+    <!-- "PLACEHOLDER" watermark, low contrast so it does not dominate -->
+    <text x="230" y="445" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" fill="#5eead4" fill-opacity="0.55">illustration · not a real analysis</text>
+  </g>
+</svg>

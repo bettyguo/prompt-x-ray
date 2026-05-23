@@ -1,0 +1,8 @@
+# Python dependencies for scripts/export-gpt2.py.
+# Pinned to versions verified to handle the GPT-2 wrapper export at opset 17.
+# Re-pin upward if you need newer CUDA wheels; the ONNX shape contract is
+# defined by the wrapper, not the library version.
+transformers>=4.40,<5.0
+torch>=2.2,<3.0
+onnx>=1.15,<2.0
+onnxruntime>=1.17,<2.0

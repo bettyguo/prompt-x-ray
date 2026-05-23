@@ -1,2 +1,14 @@
-# Auto detect text files and perform LF normalization
+# Auto detect text files and perform LF normalization (carried over from the
+# repo's initial commit; keeps Windows checkouts from poisoning the index).
 * text=auto
+
+# Binary assets — never diff or merge.
+*.png binary
+*.gif binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.mp4 binary
+*.mov binary
+*.woff binary
+*.woff2 binary

@@ -1,0 +1,157 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink-950: #0b1220;
+  --color-ink-900: #0f172a;
+  --color-ink-800: #111b2e;
+  --color-ink-700: #1b2740;
+  --color-ink-600: #263352;
+  --color-ink-500: #3a4768;
+  --color-ink-400: #5a678a;
+  --color-ink-300: #8493b3;
+  --color-ink-200: #b6c0d8;
+  --color-ink-100: #dde3f0;
+
+  --color-accent-300: #5eead4;
+  --color-accent-400: #2dd4bf;
+  --color-accent-500: #14b8a6;
+  --color-accent-600: #0d9488;
+
+  --color-warn-400: #fbbf24;
+  --color-danger-400: #f87171;
+
+  --font-sans: "Inter", "ui-sans-serif", "system-ui", "sans-serif";
+  --font-mono: "JetBrains Mono", "ui-monospace", "SFMono-Regular", "Menlo", "monospace";
+}
+
+:root {
+  color-scheme: dark;
+  font-family: var(--font-sans);
+  font-feature-settings: "cv02", "cv03", "cv04", "ss01";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Global focus-visible style — every interactive surface gets a consistent
+   accent outline when reached via keyboard. Mouse-driven focus is ignored. */
+:focus-visible {
+  outline: 2px solid var(--color-accent-400);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+/* Reduced-motion: collapse durations rather than removing transitions outright,
+   so JS that listens to transitionend still fires. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .shimmer {
+    animation: none;
+    background: var(--color-ink-700);
+  }
+}
+
+html, body, #root {
+  height: 100%;
+  background: var(--color-ink-950);
+  color: var(--color-ink-100);
+}
+
+/* Token chip animations */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--color-ink-800) 0%,
+    var(--color-ink-700) 50%,
+    var(--color-ink-800) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.6s ease-in-out infinite;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--color-ink-900); }
+::-webkit-scrollbar-thumb { background: var(--color-ink-600); border-radius: 6px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-ink-500); }
+
+/* Used by shared token-position highlighter */
+.token-pos[data-highlight="true"] {
+  outline: 1px solid var(--color-accent-400);
+  outline-offset: 1px;
+  background-color: color-mix(in oklab, var(--color-accent-500) 18%, transparent);
+}
+
+/* Touch targets: on coarse pointers (touch) every interactive surface must hit
+   at least 32x32 CSS px (WCAG 2.2 SC 2.5.8 Target Size minimum). Token chips
+   and the small view/scale toggles are otherwise too tight for finger taps. */
+@media (pointer: coarse) {
+  .token-pos {
+    min-height: 32px;
+    min-width: 32px;
+    padding-top: 0.375rem;
+    padding-bottom: 0.375rem;
+    padding-left: 0.625rem;
+    padding-right: 0.625rem;
+    display: inline-flex;
+    align-items: center;
+  }
+  button,
+  [role="button"] {
+    min-height: 32px;
+  }
+}
+
+/* SamplingPanel bar stagger-grow on first render.
+   We scale-Y from 0 → 1 anchored at the bottom (set inline via
+   transform-box: fill-box; transform-origin: center bottom). The per-bar
+   `animation-delay` produces the 25-ms-per-bar stagger. The wrapping <g> is
+   keyed on analysis.prompt, so React remounts on every new analysis and the
+   animation re-triggers naturally — no JS setTimeout. The global
+   prefers-reduced-motion rule collapses this duration to ~0ms, so users with
+   reduced motion just see the final state with no perceptible animation. */
+@keyframes sampling-bar-grow {
+  from { transform: scaleY(0); }
+  to   { transform: scaleY(1); }
+}
+.sampling-bar {
+  animation: sampling-bar-grow 220ms ease-out both;
+}
+
+/* AttentionPanel head-detail fade-in. Triggered each time a different
+   (layer, head) pair is hovered — the inner heatmap card is keyed on
+   `${layer}-${head}` so React remounts the node, re-running the keyframe. */
+@keyframes head-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ShareLink copy-feedback flash. Single-shot 800ms accent pulse layered on
+   top of the existing text swap so the eye catches the success even if it
+   wasn't looking at the button label. */
+@keyframes pxray-flash {
+  0%   { background-color: var(--color-accent-500); border-color: var(--color-accent-400); }
+  100% { background-color: var(--color-ink-800); }
+}
+.pxray-flash {
+  animation: pxray-flash 800ms ease-out 1;
+}
+
+/* Sticky header lift on scroll. The data-scrolled attribute is toggled by
+   App.tsx based on window.scrollY. The reduced-motion rule above collapses
+   the transition. We transition only shadow + border-color (never
+   border-width) so there is zero layout shift on toggle. */
+.app-header[data-scrolled="true"] {
+  box-shadow: 0 6px 14px -10px rgba(0, 0, 0, 0.6);
+  border-bottom-color: var(--color-ink-700);
+}

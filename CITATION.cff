@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+title: "prompt-x-ray: Forensic Visualization of Language Model Processing"
+authors:
+  - name: "openproblems-labs"
+repository-code: "https://github.com/openproblems-labs/prompt-x-ray"
+url: "https://github.com/openproblems-labs/prompt-x-ray"
+license: MIT
+keywords:
+  - mechanistic interpretability
+  - language model analysis
+  - prompt engineering
+  - visualization

@@ -1,0 +1,48 @@
+node_modules
+dist
+dist-ssr
+*.local
+
+# editor / OS
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# env
+.env
+.env.*.local
+
+# build artifacts we don't want in git
+public/cache/
+
+# Vite local cache
+.vite/
+
+# Phase 2.5 export tooling (Python)
+scripts/__pycache__/
+scripts/.venv/
+scripts/venv/
+
+# Playwright (capture script) artifacts
+test-results/
+playwright-report/
+playwright/.cache/
+
+# TypeScript incremental build cache
+*.tsbuildinfo
+
+# Session-local working files (not part of the public project)
+POLISH_PROMPTS.md

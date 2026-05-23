@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b1220" />
+
+    <title>prompt-x-ray — Forensic visualization of how a language model processes a prompt</title>
+    <meta
+      name="description"
+      content="Paste any prompt; see a four-panel x-ray of how GPT-2 small sees it. Tokenizer, attention, layer-by-layer predictions, sampling alternatives. Runs in your browser."
+    />
+
+    <!-- Canonical: re-enable once https://prompt-x-ray.openproblems-labs.org/ is live.
+         Pointing canonical at a hostname that 404s confuses crawlers and citers. -->
+    <!-- <link rel="canonical" href="https://prompt-x-ray.openproblems-labs.org/" /> -->
+
+    <!-- Open Graph. The PNG is what Twitter/X and LinkedIn fetch; og.svg
+         stays in the tree as the source-of-truth design (see public/og.svg).
+         `__SITE_URL__` is substituted at build time by vite.config.ts — empty
+         in local dev (leaves a path-rooted URL) and the deployed origin in CI
+         (so social-card scrapers get a fully-qualified URL). -->
+    <meta property="og:title" content="prompt-x-ray" />
+    <meta
+      property="og:description"
+      content="Forensic visualization of how a language model processes a prompt. Four synced panels, all in your browser."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="__SITE_URL__/og.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="prompt-x-ray" />
+    <meta
+      name="twitter:description"
+      content="Forensic visualization of how a language model processes a prompt."
+    />
+    <meta name="twitter:image" content="__SITE_URL__/og.png" />
+
+    <!-- Preconnect to HF CDN to speed up the first model load -->
+    <link rel="preconnect" href="https://huggingface.co" crossorigin />
+    <link rel="preconnect" href="https://cdn-lfs.huggingface.co" crossorigin />
+  </head>
+  <body class="bg-ink-950">
+    <div id="root"></div>
+    <noscript>
+      <p style="color: #dde3f0; padding: 2rem; font-family: system-ui, sans-serif;">
+        prompt-x-ray requires JavaScript — the GPT-2 forward pass runs locally in your browser.
+      </p>
+    </noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
